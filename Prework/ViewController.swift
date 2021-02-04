@@ -14,9 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
-    @IBOutlet weak var amountPerPersonLabel: UILabel!
     @IBOutlet weak var partySizeTextField: UITextField!
-
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var amountPerPersonLabel: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
 
         tipControl.setTitle(String(Int(tip1))+"%", forSegmentAt: 0)
@@ -36,12 +37,14 @@ class ViewController: UIViewController {
         // Get the result from these calculation
         let tipPercentages = [tip1/100, tip2/100, tip3/100]
         let tip = bill * Double(tipPercentages[tipControl.selectedSegmentIndex])
-        let amountPerPerson = (bill + tip)/Double(partySize)
+        let totalAmount = (bill + tip)
+        let amountPerPerson = totalAmount/Double(partySize)
         
         
         // Update output display
         tipAmountLabel.text = String(format: "$%.2f", tip)
         partySizeTextField.text = String(Int(partySize))
+        totalAmountLabel.text = String(format: "$%.2f", totalAmount)
         amountPerPersonLabel.text = String(format: "$%.2f", amountPerPerson)
     }
     
