@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
-    @IBOutlet weak var partySizeTextField: UITextField!
+    @IBOutlet weak var partySizeStepper: UIStepper!
+    @IBOutlet weak var partySizeLabel: UILabel!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var amountPerPersonLabel: UILabel!
     
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
-        var partySize = Double(partySizeTextField.text!) ?? 1
+        var partySize = Double(partySizeStepper.value)+1
 
         if (Int(partySize) == 0){
             partySize = 1.00
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         
         // Update output display
         tipAmountLabel.text = String(format: "$%.2f", tip)
-        partySizeTextField.text = String(Int(partySize))
+        partySizeLabel.text = String(Int(partySize))
         totalAmountLabel.text = String(format: "$%.2f", totalAmount)
         amountPerPersonLabel.text = String(format: "$%.2f", amountPerPerson)
     }
