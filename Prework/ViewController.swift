@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var amountPerPersonLabel: UILabel!
     @IBOutlet weak var partySizeTextField: UITextField!
-    @IBOutlet weak var memoButton: UIButton!
-    
 
     override func viewWillAppear(_ animated: Bool) {
 

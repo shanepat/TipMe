@@ -17,7 +17,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var setTip1: UITextField!
     @IBOutlet weak var setTip2: UITextField!
     @IBOutlet weak var setTip3: UITextField!
-    @IBOutlet weak var setMemo: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +25,6 @@ class SettingsViewController: UIViewController {
         setTip1.text = String(Int(tip1))
         setTip2.text = String(Int(tip2))
         setTip3.text = String(Int(tip3))
-        if (!memoIsOn){
-            setMemo.isOn = false
-        }
     }
 
     @IBAction func changeValue(_ sender: Any) {
@@ -49,7 +45,6 @@ class SettingsViewController: UIViewController {
         tip1 = Double(setTip1.text!) ?? 0
         tip2 = Double(setTip2.text!) ?? 0
         tip3 = Double(setTip3.text!) ?? 0
-        memoIsOn = setMemo.isOn
         
     }
     
