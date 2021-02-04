@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(Int(tip1))+"%", forSegmentAt: 0)
         tipControl.setTitle(String(Int(tip2))+"%", forSegmentAt: 1)
         tipControl.setTitle(String(Int(tip3))+"%", forSegmentAt: 2)
+        calculateTip(true)
     }
     
     @IBAction func calculateTip(_ sender: Any) {
