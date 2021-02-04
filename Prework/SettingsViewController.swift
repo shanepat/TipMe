@@ -7,8 +7,8 @@
 
 import UIKit
 
-var tip1 = Double(10)
-var tip2 = Double(15)
+var tip1 = Double(15)
+var tip2 = Double(18)
 var tip3 = Double(20)
 var memoIsOn = true
 
